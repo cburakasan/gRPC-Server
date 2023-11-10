@@ -1,0 +1,21 @@
+syntax="proto3";
+option java_multiple_files=true;
+package com.microservice.grpc;
+
+service CategoryService{
+  rpc getAllCategoryByDiscount(AllCategoryRequest)returns(AllCategoryResponse);
+}
+
+message AllCategoryRequest{
+
+}
+
+message AllCategoryResponse{
+  repeated Category category=1;
+}
+
+
+message Category{
+  string name =1;
+  int64 externalId=2;
+}
