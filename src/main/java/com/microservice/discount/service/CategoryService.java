@@ -1,13 +1,17 @@
 package com.microservice.discount.service;
 
-import com.microservice.discount.model.AllCategoryResp;
-import com.microservice.discount.model.CategoryResponse;
-import com.microservice.discount.model.DiscountReq;
+import com.microservice.discount.model.*;
+
+import java.util.List;
 
 public interface CategoryService {
     CategoryResponse getCategoriesByExternalId(DiscountReq discountReq);
 
-    void updateCategoryId ();
+    void updateCategoryId();
 
     AllCategoryResp getAllCategories();
+
+    List<Category> addCategoryList(List<Category> categories);
+
+    Category addCategory(Category category);
 }

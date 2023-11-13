@@ -25,8 +25,8 @@ public class CategoryServiceImpl implements CategoryService {
         return CategoryResponse.builder().category(categoriesByExternalId).build();
     }
 
-
-    public  void updateCategoryId () {
+    @Override
+    public void updateCategoryId() {
 
         List<Category> categories = categoryRepository.findAll();
         Set<Integer> usedExternalIds = new HashSet<>();
@@ -36,7 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
             int randomExternalId;
 
             do {
-                randomExternalId = random.nextInt(100000);
+                randomExternalId = random.nextInt(900000);
             } while (!usedExternalIds.add(randomExternalId));
 
             category.setExternalId(randomExternalId);
@@ -55,5 +55,16 @@ public class CategoryServiceImpl implements CategoryService {
                 .toList();
 
         return AllCategoryResp.builder().categoryList(categoryList).build();
+    }
+
+    @Override
+    public List<Category> addCategoryList(List<Category> categories) {
+        return categoryRepository.saveAll(categories);
+
+    }
+
+    @Override
+    public Category addCategory(Category category) {
+        return categoryRepository.save(category);
     }
 }

@@ -1,0 +1,34 @@
+syntax = "proto3";
+package com.microservice.grpc;
+option java_multiple_files = true;
+service DiscountCategoryService{
+  rpc addDiscountCategory(AddDiscountCategoryRequest)returns (AddDiscountCategoryResponse);
+}
+
+message AddDiscountCategoryRequest{
+  repeated AddDiscountCategoryReq addDiscountCategoryRequest = 1;
+}
+
+message AddDiscountCategoryReq{
+  DiscountAdd discount = 1;
+  CategoryAdd category = 2;
+}
+
+message DiscountAdd{
+  string code = 1;
+  float discountPrice = 2;
+}
+
+message CategoryAdd{
+  int64 id = 1;
+  string name = 2;
+}
+
+message AddDiscountCategoryResponse{
+  ResponseStatus response = 1;
+}
+
+message ResponseStatus {
+  bool statusCode = 1;
+  string message = 2;
+}
