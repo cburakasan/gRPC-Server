@@ -42,7 +42,7 @@ public class DiscountCategoryServiceImpl implements DiscountCategoryService {
         int categoryListSize = categoriesByDB.size();
 
         if (Objects.equals(discountListSize, categoryListSize) && discountListSize > 0) {
-            for (int i = 0; i <= discountListSize; i++) {
+            for (int i = 0; i < discountListSize; i++) {
                 discountCategoryList.add(DiscountCategory.builder()
                         .discount(discountListByDB.get(i))
                         .category(categoriesByDB.get(i))

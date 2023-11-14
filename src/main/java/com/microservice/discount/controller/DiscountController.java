@@ -24,7 +24,7 @@ public class DiscountController {
     }
 
     @PostMapping("/add/category/list")
-    public ResponseEntity<AddDiscountCategoryResp> addDiscountCategory(AddDiscountCategoryRequest addDiscountCategoryRequest) {
+    public ResponseEntity<AddDiscountCategoryResp> addDiscountCategory(@RequestBody AddDiscountCategoryRequest addDiscountCategoryRequest) {
         return ResponseEntity.ok(discountProcessService.addDiscountCategoryList(addDiscountCategoryRequest));
     }
 }
