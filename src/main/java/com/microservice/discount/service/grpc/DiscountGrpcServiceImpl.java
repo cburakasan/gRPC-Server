@@ -46,7 +46,7 @@ public class DiscountGrpcServiceImpl extends DiscountServiceGrpc.DiscountService
                         .build()
         );
         responseObserver.onCompleted();
-        super.getDiscount(request, responseObserver);
+        //super.getDiscount(request, responseObserver);
     }
 
 }

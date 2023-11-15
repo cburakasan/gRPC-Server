@@ -29,6 +29,5 @@ public class DiscountCategoryGrpcServiceImpl extends DiscountCategoryServiceGrpc
                         .build())
                 .build());
         responseObserver.onCompleted();
-        super.addDiscountCategory(request, responseObserver);
     }
 }

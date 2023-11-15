@@ -36,7 +36,6 @@ public class CategoryGrpcServiceImpl extends CategoryServiceGrpc.CategoryService
                         .addAllCategory(collect).build()
         );
         responseObserver.onCompleted();
-        super.getAllCategoryByDiscount(request, responseObserver);
     }
 
 }
