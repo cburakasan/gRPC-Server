@@ -3,21 +3,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:discountServerDB
-    driverClassName: org.h2.Driver
-    username: discount
-    password: admin123
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-      settings:
-        web-allow-others: true
-
+    url: jdbc:postgresql://db-postgresql-nyc3-73636-do-user-15085525-0.c.db.ondigitalocean.com:25060/defaultdb?sslmode=require
+    username: doadmin
+    password: AVNS_stifNfEMt8HX4SQKubH
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
